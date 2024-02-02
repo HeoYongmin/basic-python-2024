@@ -88,7 +88,7 @@
             print('[오류!!] 제수는 0이 될수 없습니다. ')
             return 0
         ```
- - 텍스트 파일 입출력
+- 텍스트 파일 입출력
 
     ```python
     f = open('파일명', mode='r,w,a', encoding='cp949', 'utf-8')
@@ -97,11 +97,19 @@
     f.write('text') # 쓰기
     f.close() # 파일은 반드시 닫는다
     ```
-- 파이썬 활용
+- 파이썬 응용
     - 주피터 노트북
         - Ctrl + Shift + P (명령팔레트)로 시작
         - 사용방법 (test31_jupyternb.ipynb 참조)
     - folium 기본 사용
+    ![folium 사용법](https://raw.githubusercontent.com/HeoYongmin/basic-python-2024/main/images/python_001.png)
+
+## 5일차
+- 파이썬 응용
+    - 주피터 노트북 활용 - 구글 코랩(colab)
+
+
+
 
 
 
