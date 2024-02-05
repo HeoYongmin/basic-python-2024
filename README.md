@@ -131,24 +131,29 @@
     ![쓰레드예제 사용법](https://raw.githubusercontent.com/HeoYongmin/basic-python-2024/main/images/python_003.gif)
 
     ```python
-    # 쓰레드 클래스에서 시그널 선언
+    # 스레드 클래스에서 시그널 선언
     class BackWorker(QThread): # pyQt에서 스레드 클래스 상속
-        initSignal = pyqtSignal(int) # 시그널을 UI쓰레드로 전달하기 위한 변수 객체
+        initSignal = pyqtSignal(int) # 시그널을 UI스레드로 전달하기 위한 변수 객체
         setSignal = pyqtSignal(int)
         #...
 
-        def run(self) -> None: # 쓰레드 실행할 때는 항상 run 사용
-        # 쓰레드로 동작할 내용
+        def run(self) -> None: # 스레드 실행할 때는 항상 run 사용
+        # 스레드로 동작할 내용
         maxVal = 100
-        self.initSignal.emit(maxVal) # UI쓰레드로 보내기
+        self.initSignal.emit(maxVal) # UI스레드로 보내기
 
-        class qtwin_exam(QWidget): # UI 쓰레드
+        class qtwin_exam(QWidget): # UI 스레드
         # ....
         def btnStartClicked(self):
             th = BackWorker(self)
             th.start() # BackWorker 내의 self.run() 실행
-            th.initSignal.connect(self.initPgbTask) # 쓰레드에서 초기화 시그널이 오면 initPgbTask 슬롯함수가 대신 처리
+            th.initSignal.connect(self.initPgbTask) # 스레드에서 초기화 시그널이 오면 initPgbTask 슬롯함수가 대신 처리
             # ...
+        # 스레드에서 시그널이 넘어오면 UI처리를 대신 해주는 슬롯함수
+        @pyqtSlot(int) # self.initSignal.emit()이 동작해서 실행
+        def initPgbTask(self, maxVal):
+            self.pgbTask.setValue(0)
+            self.pgbTask.setRange(0, maxVal-1)
         ```
 
 - 가상환경
