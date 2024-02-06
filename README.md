@@ -156,7 +156,24 @@
             self.pgbTask.setRange(0, maxVal-1)
         ```
 
-- 가상환경
+## 7일차
+- 파이썬 응용
+    - 객체지향 정리
+        - 상속, 오버라이딩(재정의), 오버로딩(같은이름의 함수를 마음대로 골라쓰자)
+    - 가상환경 virtualenv
+        - 다른 버전 파이썬도 설치해야 사용 가능
+        - 현재 3.11에서 3.9 가상환경 만들려면 3.9 파이썬 설치
+    - PyQt5와 응용예제 연습
+        - 이미지 뷰어
+        - 이미지 에디터
+
+     ![PyQt 예제](https://raw.githubusercontent.com/HeoYongmin/basic-python-2024/main/images/test_001.png)
+
+## 8일차
+- 파이썬 응용
+    - PyQt5 응용예제 계속
+    
+- 파이썬 기본 코딩테스트
 
 
 
